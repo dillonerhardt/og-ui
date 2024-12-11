@@ -8,11 +8,11 @@ import { Tabs } from "./tabs";
 
 type Props = {
   children: React.ReactNode;
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const id = params.id;
+  const id = (await params).id as string;
   const template = TEMPLATES.find((t) => t.id === id);
 
   if (!template) {

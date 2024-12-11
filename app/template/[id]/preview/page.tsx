@@ -4,7 +4,7 @@ import { TEMPLATES } from "@/lib/templates";
 export default async function PreviewPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const id = (await params).id as string;
   const template = TEMPLATES.find((t) => t.id === id)!;

@@ -3,8 +3,13 @@ import { Clipboard } from "lucide-react";
 import { CodeBlock } from "@/components/ui/code-block";
 import { TEMPLATES } from "@/lib/templates";
 
-export default function CodePage({ params }: { params: { id: string } }) {
-  const template = TEMPLATES.find((t) => t.id === params.id)!;
+export default async function CodePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const id = (await params).id as string;
+  const template = TEMPLATES.find((t) => t.id === id)!;
 
   return (
     <div>
