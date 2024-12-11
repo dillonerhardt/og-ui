@@ -1,8 +1,3 @@
-import Image from "next/image";
-import { GeistMono } from "geist/font/mono";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-
 export const TEMPLATES = [
   {
     id: "standard-title",

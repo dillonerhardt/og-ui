@@ -4,14 +4,6 @@ import Link from "next/link";
 import { ArrowRight, File, GalleryVerticalEnd, Globe } from "lucide-react";
 import { TEMPLATES } from "@/lib/templates";
 
-const LIMITATIONS = [
-  "Maximum dimensions: 1200x630 pixels",
-  "File size limit: < 4MB",
-  "Supports JSX-based layouts",
-  "Runs on Edge runtime",
-  "Limited CSS properties supported",
-];
-
 export default function Home() {
   return (
     <div className="min-h-screen p-8 pb-20 font-[family-name:var(--font-geist-sans)]">
@@ -30,7 +22,7 @@ export default function Home() {
             </h1>
           </div>
           <p className="text-lg text-foreground/80 max-w-2xl">
-            It's like{" "}
+            It&apos;s like{" "}
             <a
               href="https://ui.shadcn.com"
               target="_blank"
@@ -51,21 +43,6 @@ export default function Home() {
             API. Copy, paste, and customize for your projects.
           </p>
         </div>
-
-        {/* Limitations Section */}
-        {/* <div className="mb-16 p-6 rounded-lg bg-foreground/[0.03] border border-foreground/[0.06]">
-          <h2 className={"text-xl font-bold mb-4 " + GeistMono.className}>
-            OG Image Limitations
-          </h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-            {LIMITATIONS.map((limitation) => (
-              <li key={limitation} className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-foreground/40" />
-                {limitation}
-              </li>
-            ))}
-          </ul>
-        </div> */}
 
         {/* Example Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

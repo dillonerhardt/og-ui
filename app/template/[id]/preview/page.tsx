@@ -1,6 +1,5 @@
 import { GeistMono } from "geist/font/mono";
 import { TEMPLATES } from "@/lib/templates";
-import Image from "next/image";
 
 export default async function PreviewPage({
   params,

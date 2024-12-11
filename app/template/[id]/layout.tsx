@@ -4,7 +4,6 @@ import Link from "next/link";
 import { GeistMono } from "geist/font/mono";
 import { notFound } from "next/navigation";
 import { TEMPLATES } from "@/lib/templates";
-import { Code, Image as ImageIcon } from "lucide-react";
 import { Tabs } from "./tabs";
 
 type Props = {
