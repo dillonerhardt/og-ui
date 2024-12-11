@@ -20,6 +20,7 @@ export async function CodeBlock({ code, language = "tsx" }: CodeBlockProps) {
   const processedCode = await unified()
     .use(remarkParse)
     .use(remarkRehype)
+    // @ts-ignore
     .use(rehypePrettyCode, options)
     .use(rehypeStringify)
     .process("```" + language + "\n" + code + "\n```");

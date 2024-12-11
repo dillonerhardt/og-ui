@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { GeistMono } from "geist/font/mono";
 import Link from "next/link";
-import { ArrowRight, File, Globe } from "lucide-react";
+import { ArrowRight, File, GalleryVerticalEnd, Globe } from "lucide-react";
 import { TEMPLATES } from "@/lib/templates";
 
 const LIMITATIONS = [
@@ -18,17 +18,37 @@ export default function Home() {
       <main className="container mx-auto">
         {/* Hero Section */}
         <div className="py-16">
-          <h1
-            className={
-              "text-5xl font-bold mb-6 word-spacing-tight " +
-              GeistMono.className
-            }
-          >
-            OG (Img) UI
-          </h1>
+          <div className="flex items-center gap-2">
+            <GalleryVerticalEnd className="w-10 h-10 -mt-7" />
+            <h1
+              className={
+                "text-5xl font-bold mb-6 word-spacing-tight " +
+                GeistMono.className
+              }
+            >
+              OG (Img) UI
+            </h1>
+          </div>
           <p className="text-lg text-foreground/80 max-w-2xl">
-            Ready-to-use templates for the Next.js OG Image Generation API.
-            Copy, paste, and customize for your projects.
+            It's like{" "}
+            <a
+              href="https://ui.shadcn.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-700"
+            >
+              Shadcn/UI
+            </a>{" "}
+            but for the{" "}
+            <a
+              href="https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-700"
+            >
+              Next.js OpenGraph Image Generation
+            </a>{" "}
+            API. Copy, paste, and customize for your projects.
           </p>
         </div>
 
