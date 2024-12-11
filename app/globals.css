@@ -19,3 +19,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.word-spacing-tight {
+  word-spacing: -14px;
+}
