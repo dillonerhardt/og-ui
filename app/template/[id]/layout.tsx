@@ -5,6 +5,7 @@ import { GeistMono } from "geist/font/mono";
 import { notFound } from "next/navigation";
 import { TEMPLATES } from "@/lib/templates";
 import { Tabs } from "./tabs";
+import { Sparkles } from "lucide-react";
 
 type Props = {
   children: React.ReactNode;
@@ -68,7 +69,7 @@ export default async function TemplateLayout({ children, params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-[2fr,3fr] gap-8 items-start">
           {/* Left Section - Always visible */}
           <div className="flex flex-col gap-4">
-            <div className="aspect-[1200/630] relative rounded-xl overflow-hidden border border-white/5">
+            <div className="aspect-[1200/630] relative rounded-xl overflow-hidden border border-black/5 dark:border-white/5">
               <Image
                 src={template.image}
                 alt={template.title}
@@ -78,11 +79,25 @@ export default async function TemplateLayout({ children, params }: Props) {
                 priority
               />
             </div>
-            <div className="rounded-lg ml-1">
+            <div className="ml-1">
               <h1 className={"text-xl font-bold mb-2 " + GeistMono.className}>
                 {template.title}
               </h1>
-              <p className="text-sm opacity-70">{template.description}</p>
+              <p className="text-md opacity-70">{template.description}</p>
+              <div className="mt-3 flex items-center gap-2">
+                <Sparkles className="w-4 h-4" />
+                <span>
+                  Inspired by{" "}
+                  <a
+                    href={template.inspiredByUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-700"
+                  >
+                    {template.inspiredBy}
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
 

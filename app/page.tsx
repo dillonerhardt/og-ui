@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { GeistMono } from "geist/font/mono";
 import Link from "next/link";
-import { ArrowRight, File, GalleryVerticalEnd, Globe } from "lucide-react";
+import {
+  ArrowRight,
+  File,
+  GalleryVerticalEnd,
+  Github,
+  Globe,
+} from "lucide-react";
 import { TEMPLATES } from "@/lib/templates";
 
 export default function Home() {
@@ -14,7 +20,7 @@ export default function Home() {
             <GalleryVerticalEnd className="w-7 h-7 md:w-10 md:h-10 -mt-7" />
             <h1
               className={
-                "text-3xl md:text-5xl mb-6 font-bold word-spacing-tight " +
+                "text-3xl md:text-4xl mb-6 font-bold word-spacing-tight " +
                 GeistMono.className
               }
             >
@@ -61,16 +67,12 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
-              <div className="md:mt-1 px-3 py-2.5 rounded-lg bg-foreground/[0.03]">
+              <div className="md:mt-1 px-1 py-1 rounded-lg bg-foreground/[0.03]">
                 <div className="flex justify-between items-center">
-                  <h3
-                    className={
-                      "text-md font-medium mb-1 " + GeistMono.className
-                    }
-                  >
+                  <h3 className={"text-md font-medium " + GeistMono.className}>
                     {card.title}
                   </h3>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 group-hover:text-blue-500" />
                 </div>
                 <p className="text-sm opacity-70">{card.description}</p>
               </div>
@@ -80,6 +82,15 @@ export default function Home() {
 
         {/* Documentation Links */}
         <div className="mt-16 flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <a
+            href="https://github.com/dillonerhardt/og-ui"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          >
+            <Image src="/github.svg" alt="GitHub" width={16} height={16} />
+            GitHub
+          </a>
           <a
             href="https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image"
             target="_blank"

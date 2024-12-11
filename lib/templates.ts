@@ -1,9 +1,11 @@
 export const TEMPLATES = [
   {
     id: "standard-title",
-    title: "Standard Title",
+    title: "Classic OG",
     description: "Simple and clean title layout",
     image: "/examples/standard-title.webp",
+    inspiredBy: "Axiom",
+    inspiredByUrl: "https://axiom.co",
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -46,9 +48,11 @@ export async function GET() {
   },
   {
     id: "middle-bg-img",
-    title: "Background Image",
+    title: "Impactful OG",
     description: "Centered content with background image",
     image: "/examples/middle-bg-img.webp",
+    inspiredBy: "BetterStack",
+    inspiredByUrl: "https://betterstack.com",
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -115,9 +119,11 @@ export async function GET() {
   },
   {
     id: "middle-solid",
-    title: "Solid Background",
+    title: "Simple OG",
     description: "Centered content with solid background",
     image: "/examples/middle-solid.webp",
+    inspiredBy: "Kit",
+    inspiredByUrl: "https://kit.com",
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -169,9 +175,11 @@ export async function GET() {
   },
   {
     id: "solid-icon",
-    title: "Icon Layout",
+    title: "Brand OG",
     description: "Icon-based layout with solid background",
     image: "/examples/solid-icon.webp",
+    inspiredBy: "Prelude",
+    inspiredByUrl: "https://prelude.com",
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -235,9 +243,11 @@ export async function GET() {
   },
   {
     id: "logo-br-bg-img",
-    title: "Logo with Background",
+    title: "App OG",
     description: "Logo placement with background image",
     image: "/examples/logo-br-bg-img.webp",
+    inspiredBy: "Flighty",
+    inspiredByUrl: "https://flighty.com",
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -293,9 +303,11 @@ export async function GET() {
   },
   {
     id: "center-img-solid",
-    title: "Centered Image",
+    title: "Logo OG",
     description: "Centered image with solid background",
     image: "/examples/center-img-solid.webp",
+    inspiredBy: "Dimitri Knight",
+    inspiredByUrl: "https://dimitriknight.com",
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -354,10 +366,27 @@ export async function GET() {
 }`,
   },
   {
+    id: "dynamic-img",
+    title: "Dynamic OG",
+    description: "Dynamic image with solid background",
+    image: "/examples/dynamic.png",
+    inspiredBy: "iRank",
+    inspiredByUrl: "https://irank.at",
+    code: `import { ImageResponse } from 'next/og'
+ 
+export const runtime = 'edge'
+ 
+export async function GET() {
+  return new ImageResponse(
+  `,
+  },
+  {
     id: "product-img-right",
-    title: "Product Layout",
+    title: "Product OG",
     description: "Product showcase with right-aligned image",
     image: "/examples/product-img-right.webp",
+    inspiredBy: "Supabase",
+    inspiredByUrl: "https://supabase.com",
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -432,9 +461,11 @@ export async function GET() {
   },
   {
     id: "vercel-ship",
-    title: "Vercel Style",
+    title: "Vercel OG",
     description: "Vercel-inspired shipping announcement",
     image: "/examples/vercel-ship.webp",
+    inspiredBy: "Vercel",
+    inspiredByUrl: "https://vercel.com",
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
