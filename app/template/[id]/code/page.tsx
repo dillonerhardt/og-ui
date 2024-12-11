@@ -16,7 +16,7 @@ export default async function CodePage({
       <div className="flex items-center justify-between mb-4">
         <h2 className={"text-lg font-medium " + GeistMono.className}>Code</h2>
         <button className="py-2 flex items-center gap-2 rounded-md text-sm hover:text-foreground/80 transition-colors">
-          <Clipboard /> Copy
+          <Clipboard className="w-5 h-5" /> Copy
         </button>
       </div>
       <CodeBlock code={template.code} />

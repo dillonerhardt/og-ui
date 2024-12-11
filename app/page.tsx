@@ -6,15 +6,15 @@ import { TEMPLATES } from "@/lib/templates";
 
 export default function Home() {
   return (
-    <div className="min-h-screen p-8 pb-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
       <main className="container mx-auto">
         {/* Hero Section */}
         <div className="py-16">
           <div className="flex items-center gap-2">
-            <GalleryVerticalEnd className="w-10 h-10 -mt-7" />
+            <GalleryVerticalEnd className="w-7 h-7 md:w-10 md:h-10 -mt-7" />
             <h1
               className={
-                "text-5xl font-bold mb-6 word-spacing-tight " +
+                "text-3xl md:text-5xl mb-6 font-bold word-spacing-tight " +
                 GeistMono.className
               }
             >
@@ -45,14 +45,14 @@ export default function Home() {
         </div>
 
         {/* Example Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {TEMPLATES.map((card) => (
             <Link
               href={`/template/${card.id}/code`}
               key={card.id}
               className="group relative flex flex-col overflow-hidden transition-all hover:scale-[1.02]"
             >
-              <div className="aspect-[1200/630] relative rounded-xl overflow-hidden border border-white/5">
+              <div className="aspect-[1200/630] relative rounded-xl overflow-hidden border border-black/5 dark:border-white/5">
                 <Image
                   src={card.image}
                   alt={card.title}
@@ -61,7 +61,7 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
-              <div className="mt-1 px-3 py-2.5 rounded-lg bg-foreground/[0.03]">
+              <div className="md:mt-1 px-3 py-2.5 rounded-lg bg-foreground/[0.03]">
                 <div className="flex justify-between items-center">
                   <h3
                     className={
