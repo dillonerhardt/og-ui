@@ -1,13 +1,7 @@
 import Image from "next/image";
 import { GeistMono } from "geist/font/mono";
 import Link from "next/link";
-import {
-  ArrowRight,
-  File,
-  GalleryVerticalEnd,
-  Github,
-  Globe,
-} from "lucide-react";
+import { ArrowRight, File, GalleryVerticalEnd, Globe } from "lucide-react";
 import { TEMPLATES } from "@/lib/templates";
 
 export default function Home() {
