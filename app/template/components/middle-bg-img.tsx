@@ -1,6 +1,6 @@
 export default function MiddleBgImg({
-  title = "Enjoy Open Graph.",
-  backgroundImage = "/images/honeycomb-bg.png",
+  title = "Embrace OpenGraph.",
+  backgroundImage = "https://og-ui.erh.im/images/honeycomb-bg.png",
   logoImage = "",
 }: {
   title?: string;
@@ -54,13 +54,13 @@ export default function MiddleBgImg({
         )}
         <h1
           style={{
-            fontSize: "6rem",
+            fontSize: "6.8rem",
             fontWeight: "700",
             marginBottom: "1rem",
             textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
             maxWidth: "700px",
             fontFamily: "Inter",
-            lineHeight: "1.1",
+            lineHeight: "1",
           }}
         >
           {title}
