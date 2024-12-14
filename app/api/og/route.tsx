@@ -9,6 +9,10 @@ import CenterImgSolid from "@/app/template/components/center-img-solid";
 
 export const runtime = "edge";
 
+const inter = fetch(
+  new URL("@/assets/fonts/Inter/static/Inter_24pt-Bold.ttf", import.meta.url)
+).then((res) => res.arrayBuffer());
+
 async function loadGoogleFont(font: string, text: string) {
   const url = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(
     text
@@ -115,6 +119,12 @@ export async function GET(request: Request) {
         {
           name: "Geist",
           data: await loadGoogleFont("Geist+Mono", "Geist Mono"),
+          style: "normal",
+          weight: 700,
+        },
+        {
+          name: "Inter",
+          data: await inter,
           style: "normal",
           weight: 700,
         },

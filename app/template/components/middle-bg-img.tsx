@@ -1,6 +1,6 @@
 export default function MiddleBgImg({
-  title = "Ocean Fresh Fish",
-  backgroundImage = "https://images.unsplash.com/photo-1510018572596-e40e2619b412?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  title = "Enjoy Open Graph.",
+  backgroundImage = "/images/honeycomb-bg.png",
   logoImage = "",
 }: {
   title?: string;
@@ -55,10 +55,12 @@ export default function MiddleBgImg({
         <h1
           style={{
             fontSize: "6rem",
-            fontWeight: "bold",
+            fontWeight: "700",
             marginBottom: "1rem",
             textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
             maxWidth: "700px",
+            fontFamily: "Inter",
+            lineHeight: "1.1",
           }}
         >
           {title}

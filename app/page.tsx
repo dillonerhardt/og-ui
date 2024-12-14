@@ -82,7 +82,13 @@ export default function Home() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           >
-            <Image src="/github.svg" alt="GitHub" width={16} height={16} />
+            <Image
+              src="/github.svg"
+              alt="GitHub"
+              className="dark:invert"
+              width={16}
+              height={16}
+            />
             GitHub
           </a>
           <a
