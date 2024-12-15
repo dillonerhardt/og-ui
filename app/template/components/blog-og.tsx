@@ -1,8 +1,8 @@
 export default function BlogOg({
-  title = "Dynamic OG Images",
-  subtitle = "February 4, 2016 — 21,839 views",
-  author = "Dillon",
-  website = "og-ui.erh.im",
+  title,
+  subtitle,
+  author,
+  website,
 }: {
   title?: string;
   subtitle?: string;
@@ -71,7 +71,7 @@ export default function BlogOg({
             fontSize: 24,
             fontFamily: "Inter",
             color: "#666",
-            fontWeight: 400,
+            fontWeight: 300,
           }}
         >
           {subtitle}

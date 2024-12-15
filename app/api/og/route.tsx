@@ -1,14 +1,15 @@
 import { ImageResponse } from "next/og";
-import StandardTitle from "@/app/template/components/standard-title";
 import ProductImgRight from "@/app/template/components/product-img-right";
-import SolidIcon from "@/app/template/components/solid-icon";
-import MiddleSolid from "@/app/template/components/middle-solid";
-import MiddleBgImg from "@/app/template/components/middle-bg-img";
 import CenterImgSolid from "@/app/template/components/center-img-solid";
 import AppOg from "@/app/template/components/app-og";
 import NewsOg from "@/app/template/components/news-og";
 import BlogOg from "@/app/template/components/blog-og";
 import EventOg from "@/app/template/components/event-og";
+import { TEMPLATES } from "@/lib/templates";
+import ClassicOg from "@/app/template/components/classic-og";
+import ImpactfulOg from "@/app/template/components/impactful-og";
+import IconOg from "@/app/template/components/icon-og";
+import SimpleOg from "@/app/template/components/simple-og";
 
 export const runtime = "edge";
 
@@ -49,21 +50,35 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const templateId = searchParams.get("template") || "standard-title";
 
-    // Get common parameters
-    const title = searchParams.get("title") || undefined;
-    const subtitle = searchParams.get("subtitle") || undefined;
-    const backgroundColor = searchParams.get("backgroundColor") || undefined;
-    const imageUrl = searchParams.get("imageUrl") || undefined;
-    // const logoUrl = searchParams.get("logoUrl") || undefined;
-    const description = searchParams.get("description") || undefined;
-    const backgroundImage = searchParams.get("backgroundImage") || undefined;
-    const author = searchParams.get("author") || undefined;
-    const website = searchParams.get("website") || undefined;
+    // Find the template configuration
+    const template = TEMPLATES.find((t) => t.id === templateId) || TEMPLATES[0];
+    const defaults = template.defaults || {};
 
+    // Get parameters with fallbacks to template defaults
+    const title = searchParams.get("title") || defaults.title;
+    const subtitle = searchParams.get("subtitle") || defaults.subtitle;
+    const backgroundColor =
+      searchParams.get("backgroundColor") || defaults.backgroundColor;
+    const imageUrl = searchParams.get("imageUrl") || defaults.imageUrl;
+    const description = searchParams.get("description") || defaults.description;
+    const backgroundImage =
+      searchParams.get("backgroundImage") || defaults.backgroundImage;
+    const author = searchParams.get("author") || defaults.author;
+    const website = searchParams.get("website") || defaults.website;
+    const logoImage = searchParams.get("logoImage") || defaults.logoImage;
+    const date = searchParams.get("date") || defaults.date;
+    const location = searchParams.get("location") || defaults.location;
     let component;
     switch (templateId) {
-      case "standard-title":
-        component = <StandardTitle title={title} subtitle={subtitle} />;
+      case "classic-og":
+        component = (
+          <ClassicOg
+            title={title}
+            subtitle={subtitle}
+            backgroundImage={backgroundImage}
+            logoImage={logoImage}
+          />
+        );
         break;
       case "product-img-right":
         component = (
@@ -75,22 +90,20 @@ export async function GET(request: Request) {
         );
         break;
       case "icon-og":
+        component = <IconOg title={title} backgroundColor={backgroundColor} />;
+        break;
+      case "simple-og":
         component = (
-          <SolidIcon title={title} backgroundColor={backgroundColor} />
+          <SimpleOg title={title} backgroundColor={backgroundColor} />
         );
         break;
-      case "middle-solid":
+      case "impactful-og":
         component = (
-          <MiddleSolid
+          <ImpactfulOg
             title={title}
-            subtitle={subtitle}
-            backgroundColor={backgroundColor}
+            backgroundImage={backgroundImage}
+            logoImage={logoImage}
           />
-        );
-        break;
-      case "middle-bg-img":
-        component = (
-          <MiddleBgImg title={title} backgroundImage={backgroundImage} />
         );
         break;
       case "app-og":
@@ -131,11 +144,14 @@ export async function GET(request: Request) {
             title={title}
             subtitle={subtitle}
             backgroundImage={backgroundImage}
+            date={date}
+            location={location}
+            logoImage={logoImage}
           />
         );
         break;
       default:
-        component = <StandardTitle title={title} subtitle={subtitle} />;
+        component = <ClassicOg title={title} subtitle={subtitle} />;
     }
 
     return new ImageResponse(component, {

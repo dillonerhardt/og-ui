@@ -1,9 +1,8 @@
-export default function MiddleSolid({
-  title = "Geist Mono",
-  backgroundColor = "#000000",
+export default function SimpleOg({
+  title,
+  backgroundColor,
 }: {
   title?: string;
-  subtitle?: string;
   backgroundColor?: string;
 }) {
   return (

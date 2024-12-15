@@ -1,8 +1,8 @@
-export default function StandardTitle({
-  title = "Generate dynamic  OpenGraph images.",
-  subtitle = "https://og-ui.erh.im →",
-  backgroundImage = "https://og-ui.erh.im/images/blue-right-hex.png",
-  logoImage = "https://og-ui.erh.im/og-ui.svg",
+export default function ClassicOg({
+  title,
+  subtitle,
+  backgroundImage,
+  logoImage,
 }: {
   title?: string;
   subtitle?: string;

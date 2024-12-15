@@ -1,7 +1,7 @@
-export default function MiddleBgImg({
-  title = "Embrace OpenGraph.",
-  backgroundImage = "https://og-ui.erh.im/images/honeycomb-bg.png",
-  logoImage = "https://og-ui.erh.im/og-ui.svg",
+export default function ImpactfulOg({
+  title,
+  backgroundImage,
+  logoImage,
 }: {
   title?: string;
   backgroundImage?: string;

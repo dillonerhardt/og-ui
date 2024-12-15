@@ -1,7 +1,7 @@
-export default function SolidIcon({
-  title = "OpenGraph",
-  backgroundColor = "#41B1FD",
-  textColor = "#000000",
+export default function IconOg({
+  title,
+  backgroundColor,
+  textColor,
 }: {
   title?: string;
   backgroundColor?: string;

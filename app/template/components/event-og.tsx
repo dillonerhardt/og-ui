@@ -1,9 +1,9 @@
 export default function EventOg({
-  title = "OG Disrupt",
-  backgroundImage = "https://og-ui.erh.im/images/ship-bg.png",
-  date = "MAY 23, 2024",
-  location = "NEW YORK CITY",
-  logoImage = "https://og-ui.erh.im/og-ui.svg",
+  title,
+  backgroundImage,
+  date,
+  location,
+  logoImage,
 }: {
   title?: string;
   subtitle?: string;

@@ -1,6 +1,6 @@
 export default function NewsOg({
-  title = "OpenGraph is stuck in the 90s.",
-  backgroundImage = "https://og-ui.erh.im/images/theo.jpeg",
+  title,
+  backgroundImage,
 }: {
   title?: string;
   backgroundImage?: string;

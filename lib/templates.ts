@@ -1,11 +1,28 @@
+export interface TemplateDefaults {
+  title?: string;
+  subtitle?: string;
+  backgroundColor?: string;
+  imageUrl?: string;
+  description?: string;
+  backgroundImage?: string;
+  author?: string;
+  website?: string;
+}
+
 export const TEMPLATES = [
   {
-    id: "standard-title",
+    id: "classic-og",
     title: "Classic OG",
     description: "Simple and clean title layout",
     image: "/examples/standard-title.webp",
     inspiredBy: "Axiom",
     inspiredByUrl: "https://axiom.co",
+    defaults: {
+      title: "Generate dynamic  OpenGraph images.",
+      subtitle: "https://og-ui.erh.im →",
+      backgroundImage: "https://og-ui.erh.im/images/blue-right-hex.png",
+      logoImage: "https://og-ui.erh.im/og-ui.svg",
+    },
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -47,12 +64,17 @@ export async function GET() {
 }`,
   },
   {
-    id: "middle-bg-img",
+    id: "impactful-og",
     title: "Impactful OG",
     description: "Centered text and logo with a background image",
     image: "/examples/middle-bg-img.webp",
     inspiredBy: "BetterStack",
     inspiredByUrl: "https://betterstack.com",
+    defaults: {
+      title: "Embrace OpenGraph.",
+      backgroundImage: "https://og-ui.erh.im/images/honeycomb-bg.png",
+      logoImage: "https://og-ui.erh.im/og-ui.svg",
+    },
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -118,12 +140,16 @@ export async function GET() {
 }`,
   },
   {
-    id: "middle-solid",
+    id: "simple-og",
     title: "Simple OG",
     description: "Centered custom font text with a solid background",
     image: "/examples/middle-solid.webp",
     inspiredBy: "Kit",
     inspiredByUrl: "https://kit.com",
+    defaults: {
+      title: "Geist Mono",
+      backgroundColor: "#000000",
+    },
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -180,6 +206,11 @@ export async function GET() {
     image: "/examples/solid-icon.webp",
     inspiredBy: "Prelude",
     inspiredByUrl: "https://prelude.com",
+    defaults: {
+      title: "OpenGraph",
+      backgroundColor: "#41B1FD",
+      textColor: "#000000",
+    },
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -248,6 +279,11 @@ export async function GET() {
     image: "/examples/logo-br-bg-img.webp",
     inspiredBy: "Flighty",
     inspiredByUrl: "https://flighty.com",
+    defaults: {
+      title: "Your App Name",
+      subtitle: "App tagline goes here",
+      backgroundImage: "/examples/logo-br-bg-img.webp",
+    },
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -308,6 +344,12 @@ export async function GET() {
     image: "/examples/center-img-solid.webp",
     inspiredBy: "Dimitri Knight",
     inspiredByUrl: "https://dimitriknight.com",
+    defaults: {
+      title: "Your Title Here",
+      subtitle: "A brief description",
+      imageUrl: "/examples/center-img-solid.webp",
+      backgroundColor: "#ffffff",
+    },
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -372,6 +414,11 @@ export async function GET() {
     image: "/examples/product-img-right.webp",
     inspiredBy: "Supabase",
     inspiredByUrl: "https://supabase.com",
+    defaults: {
+      title: "Product Name",
+      description: "Short product description goes here",
+      imageUrl: "/examples/product-img-right.webp",
+    },
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -451,6 +498,13 @@ export async function GET() {
     image: "/examples/vercel-ship.webp",
     inspiredBy: "Vercel",
     inspiredByUrl: "https://vercel.com",
+    defaults: {
+      title: "OG Disrupt",
+      backgroundImage: "https://og-ui.erh.im/images/og-man-graphic.jpg",
+      date: "MAY 23, 2024",
+      location: "NEW YORK CITY",
+      logoImage: "https://og-ui.erh.im/og-ui.svg",
+    },
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -541,6 +595,10 @@ export async function GET() {
     image: "/examples/news-og.webp",
     inspiredBy: "News",
     inspiredByUrl: "https://news.com",
+    defaults: {
+      title: "OpenGraph is stuck in the 90s.",
+      backgroundImage: "https://og-ui.erh.im/images/theo.jpeg",
+    },
   },
   {
     id: "blog-og",
@@ -549,5 +607,11 @@ export async function GET() {
     image: "/examples/blog-og.webp",
     inspiredBy: "Blog",
     inspiredByUrl: "https://blog.com",
+    defaults: {
+      title: "Dynamic OG Images",
+      subtitle: "February 4, 2016 — 21,839 views",
+      author: "Dillon",
+      website: "og-ui.erh.im",
+    },
   },
 ];
