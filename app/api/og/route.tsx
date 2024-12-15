@@ -51,7 +51,7 @@ export async function GET(request: Request) {
     const subtitle = searchParams.get("subtitle") || undefined;
     const backgroundColor = searchParams.get("backgroundColor") || undefined;
     const imageUrl = searchParams.get("imageUrl") || undefined;
-    const logoUrl = searchParams.get("logoUrl") || undefined;
+    // const logoUrl = searchParams.get("logoUrl") || undefined;
     const description = searchParams.get("description") || undefined;
     const backgroundImage = searchParams.get("backgroundImage") || undefined;
 
