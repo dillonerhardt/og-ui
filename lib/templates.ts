@@ -504,7 +504,7 @@ export async function GET() {
       backgroundImage: "https://og-ui.erh.im/images/og-man-graphic.jpg",
       date: "MAY 23, 2024",
       location: "NEW YORK CITY",
-      logoImage: "https://og-ui.erh.im/og-ui.svg",
+      logoImage: "https://og-ui.erh.im/og-ui-dark.svg",
       textColor: "#000000",
     },
     code: `import { ImageResponse } from 'next/og'
@@ -628,8 +628,8 @@ export async function GET() {
       subtitle: "Avenger",
       imageUrl: "https://og-ui.erh.im/images/luigi.jpg",
       backgroundColor: "#18181B",
-      // website: "og-ui.erh.im",
-      description: "Building cool stuff on the internet",
+      website: "Profile",
+      description: "Passionate about healthcare and accountability",
     },
     code: `import { ImageResponse } from 'next/og'
  

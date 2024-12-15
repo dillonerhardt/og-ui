@@ -41,7 +41,7 @@ export function ProfileOG({
           style={{
             width: "300px",
             height: "300px",
-            borderRadius: "24px",
+            borderRadius: "50%",
             objectFit: "cover",
             border: "4px solid rgba(255,255,255,0.1)",
           }}
