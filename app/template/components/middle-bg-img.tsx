@@ -1,7 +1,7 @@
 export default function MiddleBgImg({
   title = "Embrace OpenGraph.",
   backgroundImage = "https://og-ui.erh.im/images/honeycomb-bg.png",
-  logoImage = "",
+  logoImage = "https://og-ui.erh.im/og-ui.svg",
 }: {
   title?: string;
   backgroundImage?: string;
@@ -47,8 +47,8 @@ export default function MiddleBgImg({
             src={logoImage}
             alt="Logo"
             style={{
-              width: "200px",
-              marginBottom: "2rem",
+              height: "40px",
+              marginBottom: ".5rem",
             }}
           />
         )}

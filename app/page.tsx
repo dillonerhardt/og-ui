@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { GeistMono } from "geist/font/mono";
 import Link from "next/link";
 import { ArrowRight, File, GalleryVerticalEnd, Globe } from "lucide-react";
 import { TEMPLATES } from "@/lib/templates";
+import { useState } from "react";
 
 export default function Home() {
+  const [showPreviews, setShowPreviews] = useState(true);
+
   return (
     <div className="min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
       <main className="container mx-auto">
@@ -44,6 +49,16 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Toggle Switch */}
+        <div className="flex justify-end mb-4">
+          <button
+            onClick={() => setShowPreviews(!showPreviews)}
+            className="flex items-center gap-2 text-sm text-foreground/60 hover:text-foreground/80 transition-colors"
+          >
+            {showPreviews ? "Showing Live Previews" : "Showing Templates"}
+          </button>
+        </div>
+
         {/* Example Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {TEMPLATES.map((card) => (
@@ -53,13 +68,19 @@ export default function Home() {
               className="group relative flex flex-col overflow-hidden transition-all hover:scale-[1.02]"
             >
               <div className="aspect-[1200/630] relative rounded-xl overflow-hidden border border-black/5 dark:border-white/5">
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
+                {showPreviews ? (
+                  <img
+                    src={`/api/og?template=${card.id}`}
+                    alt={card.title}
+                    className="object-cover w-full h-full"
+                  />
+                ) : (
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="object-cover w-full h-full"
+                  />
+                )}
               </div>
               <div className="md:mt-1 px-1 py-1 rounded-lg bg-foreground/[0.03]">
                 <div className="flex justify-between items-center">

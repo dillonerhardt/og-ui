@@ -49,7 +49,7 @@ export async function GET() {
   {
     id: "middle-bg-img",
     title: "Impactful OG",
-    description: "Centered content with background image",
+    description: "Centered text and logo with a background image",
     image: "/examples/middle-bg-img.webp",
     inspiredBy: "BetterStack",
     inspiredByUrl: "https://betterstack.com",
@@ -120,7 +120,7 @@ export async function GET() {
   {
     id: "middle-solid",
     title: "Simple OG",
-    description: "Centered content with solid background",
+    description: "Centered custom font text with a solid background",
     image: "/examples/middle-solid.webp",
     inspiredBy: "Kit",
     inspiredByUrl: "https://kit.com",
@@ -174,9 +174,9 @@ export async function GET() {
 }`,
   },
   {
-    id: "solid-icon",
-    title: "Brand OG",
-    description: "Icon-based layout with solid background",
+    id: "icon-og",
+    title: "Icon OG",
+    description: "Centered text with an icon and solid background",
     image: "/examples/solid-icon.webp",
     inspiredBy: "Prelude",
     inspiredByUrl: "https://prelude.com",
@@ -242,7 +242,7 @@ export async function GET() {
 }`,
   },
   {
-    id: "logo-br-bg-img",
+    id: "app-og",
     title: "App OG",
     description: "Logo placement with background image",
     image: "/examples/logo-br-bg-img.webp",
@@ -364,21 +364,6 @@ export async function GET() {
     }
   )
 }`,
-  },
-  {
-    id: "dynamic-img",
-    title: "Dynamic OG",
-    description: "Dynamic image with solid background",
-    image: "/examples/dynamic.png",
-    inspiredBy: "iRank",
-    inspiredByUrl: "https://irank.at",
-    code: `import { ImageResponse } from 'next/og'
- 
-export const runtime = 'edge'
- 
-export async function GET() {
-  return new ImageResponse(
-  `,
   },
   {
     id: "product-img-right",

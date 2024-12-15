@@ -1,4 +1,4 @@
-export default function LogoBrBgImg({
+export default function AppOg({
   title = "Your Title Here",
   subtitle = "Your subtitle goes here",
   backgroundImage = "https://example.com/background.jpg",
