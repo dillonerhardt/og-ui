@@ -1,5 +1,3 @@
-import { GalleryVerticalEnd } from "lucide-react";
-
 export default function SolidIcon({
   title = "OpenGraph",
   backgroundColor = "#000000",
