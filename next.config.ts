@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.imgbin.com",
       },
+      {
+        protocol: "https",
+        hostname: "pbs.twimg.com",
+      },
     ],
   },
 };

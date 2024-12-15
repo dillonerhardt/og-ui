@@ -6,6 +6,8 @@ import MiddleSolid from "@/app/template/components/middle-solid";
 import MiddleBgImg from "@/app/template/components/middle-bg-img";
 import CenterImgSolid from "@/app/template/components/center-img-solid";
 import AppOg from "@/app/template/components/app-og";
+import NewsOg from "@/app/template/components/news-og";
+import BlogOg from "@/app/template/components/blog-og";
 
 export const runtime = "edge";
 
@@ -104,6 +106,20 @@ export async function GET(request: Request) {
             subtitle={subtitle}
             imageUrl={imageUrl}
             backgroundColor={backgroundColor}
+          />
+        );
+        break;
+      case "news-og":
+        component = <NewsOg title={title} backgroundImage={backgroundImage} />;
+        break;
+      case "blog-og":
+        component = (
+          <BlogOg
+            title={title}
+            date={searchParams.get("date") || undefined}
+            views={searchParams.get("views") || undefined}
+            author={searchParams.get("author") || undefined}
+            website={searchParams.get("website") || undefined}
           />
         );
         break;

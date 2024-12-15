@@ -534,4 +534,20 @@ export async function GET() {
   )
 }`,
   },
+  {
+    id: "news-og",
+    title: "News OG",
+    description: "News article with image and title",
+    image: "/examples/news-og.webp",
+    inspiredBy: "News",
+    inspiredByUrl: "https://news.com",
+  },
+  {
+    id: "blog-og",
+    title: "Blog OG",
+    description: "Blog post with image and title",
+    image: "/examples/blog-og.webp",
+    inspiredBy: "Blog",
+    inspiredByUrl: "https://blog.com",
+  },
 ];
