@@ -1,9 +1,11 @@
 export default function SolidIcon({
   title = "OpenGraph",
-  backgroundColor = "#000000",
+  backgroundColor = "#41B1FD",
+  textColor = "#000000",
 }: {
   title?: string;
   backgroundColor?: string;
+  textColor?: string;
 }) {
   return (
     <div
@@ -15,7 +17,7 @@ export default function SolidIcon({
         width: "100%",
         height: "100%",
         backgroundColor,
-        color: "white",
+        color: textColor,
         padding: "40px",
       }}
     >
@@ -23,15 +25,15 @@ export default function SolidIcon({
         <svg
           data-v-f6279e27=""
           xmlns="http://www.w3.org/2000/svg"
-          width="100"
-          height="100"
+          width="130"
+          height="130"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          style={{ marginRight: "20px" }}
+          style={{ marginRight: "20px", marginTop: "-20px" }}
         >
           <path d="M7 2h10"></path>
           <path d="M5 6h14"></path>
@@ -39,7 +41,7 @@ export default function SolidIcon({
         </svg>
         <h1
           style={{
-            fontSize: "72px",
+            fontSize: "96px",
             fontWeight: "bold",
             textAlign: "center",
             lineHeight: 1.2,
