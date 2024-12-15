@@ -4,7 +4,6 @@ import ProductImgRight from "@/app/template/components/product-img-right";
 import SolidIcon from "@/app/template/components/solid-icon";
 import MiddleSolid from "@/app/template/components/middle-solid";
 import MiddleBgImg from "@/app/template/components/middle-bg-img";
-import LogoBrBgImg from "@/app/template/components/appOg";
 import CenterImgSolid from "@/app/template/components/center-img-solid";
 import AppOg from "@/app/template/components/app-og";
 
