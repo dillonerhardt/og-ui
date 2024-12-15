@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { GeistMono } from "geist/font/mono";
 import Link from "next/link";
-import { ArrowRight, File, GalleryVerticalEnd, Globe } from "lucide-react";
+import {
+  ArrowRight,
+  File,
+  GalleryVerticalEnd,
+  Globe,
+  Sparkles,
+} from "lucide-react";
 import { TEMPLATES } from "@/lib/templates";
 
 const showPreviews = true;
@@ -44,6 +50,33 @@ export default function Home() {
             </a>{" "}
             API. Copy, paste, and customize for your projects.
           </p>
+
+          {/* New Callout Section */}
+          <div className="mt-4 flex items-start gap-3 p-4 bg-blue-50 dark:bg-blue-950/50 rounded-lg max-w-3xl">
+            <Sparkles className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
+            <p className="text-sm text-blue-800 dark:text-blue-200">
+              Not using Next.js? No worries! You can still use these templates
+              with{" "}
+              <a
+                href="https://github.com/vercel/satori"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Satori
+              </a>{" "}
+              (by Vercel). Check out this{" "}
+              <a
+                href="https://kettanaito.com/blog/build-time-og-images-in-remix"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                great guide
+              </a>{" "}
+              on implementing dynamic OG images in Remix! ✨
+            </p>
+          </div>
         </div>
 
         {/* Example Cards Grid */}
