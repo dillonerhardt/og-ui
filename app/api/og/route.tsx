@@ -8,6 +8,7 @@ import CenterImgSolid from "@/app/template/components/center-img-solid";
 import AppOg from "@/app/template/components/app-og";
 import NewsOg from "@/app/template/components/news-og";
 import BlogOg from "@/app/template/components/blog-og";
+import EventOg from "@/app/template/components/event-og";
 
 export const runtime = "edge";
 
@@ -121,6 +122,15 @@ export async function GET(request: Request) {
             subtitle={subtitle}
             author={author}
             website={website}
+          />
+        );
+        break;
+      case "event-og":
+        component = (
+          <EventOg
+            title={title}
+            subtitle={subtitle}
+            backgroundImage={backgroundImage}
           />
         );
         break;

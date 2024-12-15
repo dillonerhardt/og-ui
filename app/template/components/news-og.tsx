@@ -1,5 +1,5 @@
 export default function NewsOg({
-  title,
+  title = "OpenGraph is stuck in the 90s.",
   backgroundImage = "https://og-ui.erh.im/images/theo.jpeg",
 }: {
   title?: string;
@@ -42,7 +42,8 @@ export default function NewsOg({
           left: 0,
           right: 0,
           height: "50%",
-          background: "linear-gradient(transparent, rgba(0,0,0,0.8))",
+          background:
+            "linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))",
         }}
       />
 

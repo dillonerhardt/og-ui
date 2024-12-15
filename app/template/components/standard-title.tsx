@@ -1,5 +1,5 @@
 export default function StandardTitle({
-  title = "Generate great\nopen graph images\nfor your dynamic content.",
+  title = "Generate dynamic  OpenGraph images.",
   subtitle = "https://og-ui.erh.im →",
   backgroundImage = "https://og-ui.erh.im/images/blue-right-hex.png",
   logoImage = "https://og-ui.erh.im/og-ui.svg",

@@ -445,9 +445,9 @@ export async function GET() {
 }`,
   },
   {
-    id: "vercel-ship",
-    title: "Vercel OG",
-    description: "Vercel-inspired shipping announcement",
+    id: "event-og",
+    title: "Event OG",
+    description: "Great for event announcements. Vercel-inspired.",
     image: "/examples/vercel-ship.webp",
     inspiredBy: "Vercel",
     inspiredByUrl: "https://vercel.com",
@@ -537,7 +537,7 @@ export async function GET() {
   {
     id: "news-og",
     title: "News OG",
-    description: "News article with image and title",
+    description: "Great for news articles with a headline and image",
     image: "/examples/news-og.webp",
     inspiredBy: "News",
     inspiredByUrl: "https://news.com",
