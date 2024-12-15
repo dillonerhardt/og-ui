@@ -13,7 +13,7 @@ export const TEMPLATES = [
   {
     id: "classic-og",
     title: "Classic OG",
-    description: "Simple and clean title layout",
+    description: "Clean and crisp, just like your morning coffee ☕",
     image: "/examples/standard-title.webp",
     inspiredBy: "Axiom",
     inspiredByUrl: "https://axiom.co",
@@ -66,7 +66,7 @@ export async function GET() {
   {
     id: "impactful-og",
     title: "Impactful OG",
-    description: "Centered text and logo with a background image",
+    description: "Makes your content pop like fireworks 💥",
     image: "/examples/middle-bg-img.webp",
     inspiredBy: "BetterStack",
     inspiredByUrl: "https://betterstack.com",
@@ -142,7 +142,7 @@ export async function GET() {
   {
     id: "simple-og",
     title: "Simple OG",
-    description: "Centered custom font text with a solid background",
+    description: "Minimalism at its finest ✨",
     image: "/examples/middle-solid.webp",
     inspiredBy: "Kit",
     inspiredByUrl: "https://kit.com",
@@ -202,7 +202,7 @@ export async function GET() {
   {
     id: "icon-og",
     title: "Icon OG",
-    description: "Centered text with an icon and solid background",
+    description: "Icons that steal the show 🎯",
     image: "/examples/solid-icon.webp",
     inspiredBy: "Prelude",
     inspiredByUrl: "https://prelude.com",
@@ -275,7 +275,7 @@ export async function GET() {
   {
     id: "app-og",
     title: "App OG",
-    description: "Logo placement with background image",
+    description: "Your app's best outfit 📱",
     image: "/examples/logo-br-bg-img.webp",
     inspiredBy: "Flighty",
     inspiredByUrl: "https://flighty.com",
@@ -340,7 +340,7 @@ export async function GET() {
   {
     id: "logo-og",
     title: "Logo OG",
-    description: "Centered image with solid background",
+    description: "Let your logo do the talking 🎤",
     image: "/examples/center-img-solid.webp",
     inspiredBy: "Dimitri Knight",
     inspiredByUrl: "https://dimitriknight.com",
@@ -409,7 +409,7 @@ export async function GET() {
   {
     id: "product-og",
     title: "Product OG",
-    description: "Product showcase with right-aligned image",
+    description: "Show off your goods in style 🛍️",
     image: "/examples/product-img-right.webp",
     inspiredBy: "Supabase",
     inspiredByUrl: "https://supabase.com",
@@ -495,7 +495,7 @@ export async function GET() {
   {
     id: "event-og",
     title: "Event OG",
-    description: "Great for event announcements. Vercel-inspired.",
+    description: "Event announcements that wow 🎉",
     image: "/examples/vercel-ship.webp",
     inspiredBy: "Vercel",
     inspiredByUrl: "https://vercel.com",
@@ -593,7 +593,7 @@ export async function GET() {
   {
     id: "news-og",
     title: "News OG",
-    description: "Great for news articles with a headline and image",
+    description: "Headlines that turn heads 📰",
     image: "/examples/news-og.webp",
     inspiredBy: "News",
     inspiredByUrl: "https://news.com",
@@ -605,7 +605,7 @@ export async function GET() {
   {
     id: "blog-og",
     title: "Blog OG",
-    description: "Blog post with image and title",
+    description: "Blog posts with pizzazz ✍️",
     image: "/examples/blog-og.webp",
     inspiredBy: "Blog",
     inspiredByUrl: "https://blog.com",
@@ -615,5 +615,136 @@ export async function GET() {
       author: "Dillon",
       website: "og-ui.erh.im",
     },
+  },
+  {
+    id: "profile-og",
+    title: "Profile OG",
+    description: "Personal profiles that stand out 🪪",
+    image: "/examples/profile-og.webp",
+    inspiredBy: "Bento",
+    inspiredByUrl: "https://bento.me",
+    defaults: {
+      title: "Luigi Mangione",
+      subtitle: "Avenger",
+      imageUrl: "https://og-ui.erh.im/images/luigi.jpg",
+      backgroundColor: "#18181B",
+      website: "og-ui.erh.im",
+      description: "Building cool stuff on the internet",
+    },
+    code: `import { ImageResponse } from 'next/og'
+ 
+export const runtime = 'edge'
+ 
+export async function GET() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          background: '#18181B',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          padding: '60px',
+          gap: '60px',
+        }}
+      >
+        {/* Profile Image */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <img
+            src="https://your-profile-image.jpg"
+            alt="Profile"
+            style={{
+              width: '300px',
+              height: '300px',
+              borderRadius: '24px',
+              objectFit: 'cover',
+              border: '4px solid rgba(255,255,255,0.1)',
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '24px',
+          }}
+        >
+          <h1
+            style={{
+              fontSize: 72,
+              fontWeight: 'bold',
+              color: 'white',
+              lineHeight: 1,
+              margin: 0,
+            }}
+          >
+            Your Name
+          </h1>
+          
+          <p
+            style={{
+              fontSize: 36,
+              color: '#a1a1aa',
+              margin: 0,
+              lineHeight: 1.2,
+            }}
+          >
+            Your Title / Role
+          </p>
+
+          <p
+            style={{
+              fontSize: 32,
+              color: '#71717a',
+              margin: 0,
+              lineHeight: 1.4,
+              maxWidth: '600px',
+            }}
+          >
+            A brief description about yourself and what you do. Keep it concise and impactful.
+          </p>
+
+          {/* Social Links/Stats Container */}
+          <div
+            style={{
+              display: 'flex',
+              gap: '16px',
+              marginTop: '12px',
+            }}
+          >
+            {/* Stats Pill */}
+            <div
+              style={{
+                background: 'rgba(255,255,255,0.1)',
+                padding: '12px 24px',
+                borderRadius: '100px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+              }}
+            >
+              <span style={{ color: '#ffffff', fontSize: '24px' }}>
+                yourwebsite.com
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    {
+      width: 1200,
+      height: 630,
+    }
+  )
+}`,
   },
 ];

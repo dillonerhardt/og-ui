@@ -10,6 +10,7 @@ import IconOg from "@/app/template/components/icon-og";
 import SimpleOg from "@/app/template/components/simple-og";
 import LogoOg from "@/app/template/components/logo-og";
 import ProductOg from "@/app/template/components/product-og";
+import { ProfileOG } from "@/app/template/components/profile-og";
 
 export const runtime = "edge";
 
@@ -155,6 +156,18 @@ export async function GET(request: Request) {
             location={location}
             logoImage={logoImage}
             textColor={textColor}
+          />
+        );
+        break;
+      case "profile-og":
+        component = (
+          <ProfileOG
+            title={title}
+            subtitle={subtitle}
+            description={description}
+            imageUrl={imageUrl}
+            backgroundColor={backgroundColor}
+            website={website}
           />
         );
         break;
