@@ -94,7 +94,6 @@ export async function GET(request: Request) {
             title={title}
             subtitle={subtitle}
             backgroundImage={backgroundImage}
-            logoUrl={logoUrl}
           />
         );
         break;
