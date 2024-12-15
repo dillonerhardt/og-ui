@@ -1,8 +1,8 @@
 export default function AppOg({
-  title = "Dynamic images",
+  title,
   subtitle,
-  backgroundImage = "https://og-ui.erh.im/images/green-hex.png",
-  appImage = "https://og-ui.erh.im/images/iphone-mockup.png",
+  backgroundImage,
+  appImage,
 }: {
   title?: string;
   subtitle?: string;

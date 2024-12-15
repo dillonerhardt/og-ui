@@ -1,6 +1,4 @@
 import { ImageResponse } from "next/og";
-import ProductImgRight from "@/app/template/components/product-img-right";
-import CenterImgSolid from "@/app/template/components/center-img-solid";
 import AppOg from "@/app/template/components/app-og";
 import NewsOg from "@/app/template/components/news-og";
 import BlogOg from "@/app/template/components/blog-og";
@@ -10,6 +8,8 @@ import ClassicOg from "@/app/template/components/classic-og";
 import ImpactfulOg from "@/app/template/components/impactful-og";
 import IconOg from "@/app/template/components/icon-og";
 import SimpleOg from "@/app/template/components/simple-og";
+import LogoOg from "@/app/template/components/logo-og";
+import ProductOg from "@/app/template/components/product-og";
 
 export const runtime = "edge";
 
@@ -68,6 +68,9 @@ export async function GET(request: Request) {
     const logoImage = searchParams.get("logoImage") || defaults.logoImage;
     const date = searchParams.get("date") || defaults.date;
     const location = searchParams.get("location") || defaults.location;
+    const textColor = searchParams.get("textColor") || defaults.textColor;
+    const appImage = searchParams.get("appImage") || defaults.appImage;
+    const renderedText = `${title} ${subtitle} ${date} ${location} ${author} ${website} ${description}`;
     let component;
     switch (templateId) {
       case "classic-og":
@@ -80,9 +83,9 @@ export async function GET(request: Request) {
           />
         );
         break;
-      case "product-img-right":
+      case "product-og":
         component = (
-          <ProductImgRight
+          <ProductOg
             title={title}
             description={description}
             imageUrl={imageUrl}
@@ -112,12 +115,13 @@ export async function GET(request: Request) {
             title={title}
             subtitle={subtitle}
             backgroundImage={backgroundImage}
+            appImage={appImage}
           />
         );
         break;
-      case "center-img-solid":
+      case "logo-og":
         component = (
-          <CenterImgSolid
+          <LogoOg
             title={title}
             subtitle={subtitle}
             imageUrl={imageUrl}
@@ -147,6 +151,7 @@ export async function GET(request: Request) {
             date={date}
             location={location}
             logoImage={logoImage}
+            textColor={textColor}
           />
         );
         break;
@@ -160,7 +165,7 @@ export async function GET(request: Request) {
       fonts: [
         {
           name: "Geist",
-          data: await loadGoogleFont("Geist+Mono", "Geist Mono"),
+          data: await loadGoogleFont("Geist+Mono", renderedText),
           style: "normal",
           weight: 700,
         },

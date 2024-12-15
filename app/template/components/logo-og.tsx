@@ -1,6 +1,6 @@
-export default function CenterImgSolid({
-  imageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg",
-  backgroundColor = "#dc0100",
+export default function LogoOg({
+  imageUrl,
+  backgroundColor,
 }: {
   title?: string;
   subtitle?: string;

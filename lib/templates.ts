@@ -280,9 +280,9 @@ export async function GET() {
     inspiredBy: "Flighty",
     inspiredByUrl: "https://flighty.com",
     defaults: {
-      title: "Your App Name",
-      subtitle: "App tagline goes here",
-      backgroundImage: "/examples/logo-br-bg-img.webp",
+      title: "Dynamic images",
+      backgroundImage: "https://og-ui.erh.im/images/green-hex.png",
+      appImage: "https://og-ui.erh.im/images/iphone-mockup.png",
     },
     code: `import { ImageResponse } from 'next/og'
  
@@ -338,17 +338,16 @@ export async function GET() {
 }`,
   },
   {
-    id: "center-img-solid",
+    id: "logo-og",
     title: "Logo OG",
     description: "Centered image with solid background",
     image: "/examples/center-img-solid.webp",
     inspiredBy: "Dimitri Knight",
     inspiredByUrl: "https://dimitriknight.com",
     defaults: {
-      title: "Your Title Here",
-      subtitle: "A brief description",
-      imageUrl: "/examples/center-img-solid.webp",
-      backgroundColor: "#ffffff",
+      imageUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg",
+      backgroundColor: "#dc0100",
     },
     code: `import { ImageResponse } from 'next/og'
  
@@ -408,7 +407,7 @@ export async function GET() {
 }`,
   },
   {
-    id: "product-img-right",
+    id: "product-og",
     title: "Product OG",
     description: "Product showcase with right-aligned image",
     image: "/examples/product-img-right.webp",
@@ -416,8 +415,8 @@ export async function GET() {
     inspiredByUrl: "https://supabase.com",
     defaults: {
       title: "Product Name",
-      description: "Short product description goes here",
-      imageUrl: "/examples/product-img-right.webp",
+      description: "Product description or tagline goes here",
+      imageUrl: "https://og-ui.erh.im/images/og-code-product.png",
     },
     code: `import { ImageResponse } from 'next/og'
  
@@ -504,6 +503,7 @@ export async function GET() {
       date: "MAY 23, 2024",
       location: "NEW YORK CITY",
       logoImage: "https://og-ui.erh.im/og-ui.svg",
+      textColor: "#000000",
     },
     code: `import { ImageResponse } from 'next/og'
  
