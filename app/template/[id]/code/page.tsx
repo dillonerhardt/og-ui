@@ -19,7 +19,7 @@ export default async function CodePage({
           <Clipboard className="w-5 h-5" /> Copy
         </button>
       </div>
-      <CodeBlock code={template.code} />
+      <CodeBlock code={template.code || ""} />
     </div>
   );
 }

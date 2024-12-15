@@ -20,6 +20,8 @@ export default function NewsOg({
         <img
           src={backgroundImage}
           alt=""
+          height={1000}
+          width={1000}
           style={{
             position: "absolute",
             top: 0,

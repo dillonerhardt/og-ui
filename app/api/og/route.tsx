@@ -56,6 +56,8 @@ export async function GET(request: Request) {
     // const logoUrl = searchParams.get("logoUrl") || undefined;
     const description = searchParams.get("description") || undefined;
     const backgroundImage = searchParams.get("backgroundImage") || undefined;
+    const author = searchParams.get("author") || undefined;
+    const website = searchParams.get("website") || undefined;
 
     let component;
     switch (templateId) {
@@ -116,10 +118,9 @@ export async function GET(request: Request) {
         component = (
           <BlogOg
             title={title}
-            date={searchParams.get("date") || undefined}
-            views={searchParams.get("views") || undefined}
-            author={searchParams.get("author") || undefined}
-            website={searchParams.get("website") || undefined}
+            subtitle={subtitle}
+            author={author}
+            website={website}
           />
         );
         break;
