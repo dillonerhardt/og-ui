@@ -3,11 +3,15 @@ export default function ProductOg({
   description,
   imageUrl,
   backgroundImage,
+  backgroundColor = "#000000",
+  logoImage,
 }: {
   title?: string;
   description?: string;
   imageUrl?: string;
   backgroundImage?: string;
+  backgroundColor?: string;
+  logoImage?: string;
 }) {
   return (
     <div
@@ -16,7 +20,7 @@ export default function ProductOg({
         flexDirection: "column",
         width: "100%",
         height: "100%",
-        backgroundColor: "#000000",
+        backgroundColor: backgroundColor,
         color: "white",
         position: "relative",
       }}
@@ -48,9 +52,27 @@ export default function ProductOg({
           display: "flex",
           flexDirection: "column",
           height: "100%",
-          padding: "32px",
+          padding: "48px",
         }}
       >
+        {/* Logo */}
+        {logoImage && (
+          <div
+            style={{
+              display: "flex",
+              marginBottom: "24px",
+            }}
+          >
+            <img
+              src={logoImage}
+              alt="Logo"
+              style={{
+                height: "40px",
+              }}
+            />
+          </div>
+        )}
+
         {/* Main Content */}
         <div
           style={{
@@ -71,11 +93,11 @@ export default function ProductOg({
           >
             <h1
               style={{
-                fontSize: "64px",
+                fontSize: "56px",
                 fontWeight: "400",
                 lineHeight: 1.1,
                 margin: 0,
-                fontFamily: "Geist",
+                // fontFamily: "Geist",
               }}
             >
               {title}
@@ -85,7 +107,7 @@ export default function ProductOg({
                 fontSize: "32px",
                 color: "#666666",
                 margin: 0,
-                fontFamily: "Geist",
+                // fontFamily: "Geist",
               }}
             >
               {description}
@@ -100,6 +122,8 @@ export default function ProductOg({
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                marginBottom: "-20px",
+                marginRight: "20px",
               }}
             >
               <img
@@ -107,7 +131,7 @@ export default function ProductOg({
                 alt={title}
                 style={{
                   maxWidth: "100%",
-                  maxHeight: "80vh",
+                  maxHeight: "90vh",
                   objectFit: "contain",
                 }}
               />

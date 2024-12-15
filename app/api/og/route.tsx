@@ -89,6 +89,9 @@ export async function GET(request: Request) {
             title={title}
             description={description}
             imageUrl={imageUrl}
+            backgroundImage={backgroundImage}
+            backgroundColor={backgroundColor}
+            logoImage={logoImage}
           />
         );
         break;

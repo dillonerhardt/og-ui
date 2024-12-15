@@ -414,9 +414,11 @@ export async function GET() {
     inspiredBy: "Supabase",
     inspiredByUrl: "https://supabase.com",
     defaults: {
-      title: "Product Name",
-      description: "Product description or tagline goes here",
+      title: "OG Templates",
+      description: "Copy paste and customize for your project",
       imageUrl: "https://og-ui.erh.im/images/og-code-product.png",
+      backgroundColor: "#121212",
+      logoImage: "https://og-ui.erh.im/og-ui.svg",
     },
     code: `import { ImageResponse } from 'next/og'
  

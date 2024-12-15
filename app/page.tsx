@@ -1,15 +1,12 @@
-"use client";
-
 import Image from "next/image";
 import { GeistMono } from "geist/font/mono";
 import Link from "next/link";
 import { ArrowRight, File, GalleryVerticalEnd, Globe } from "lucide-react";
 import { TEMPLATES } from "@/lib/templates";
-import { useState } from "react";
+
+const showPreviews = true;
 
 export default function Home() {
-  const [showPreviews, setShowPreviews] = useState(true);
-
   return (
     <div className="min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
       <main className="container mx-auto">
@@ -47,16 +44,6 @@ export default function Home() {
             </a>{" "}
             API. Copy, paste, and customize for your projects.
           </p>
-        </div>
-
-        {/* Toggle Switch */}
-        <div className="flex justify-end mb-4">
-          <button
-            onClick={() => setShowPreviews(!showPreviews)}
-            className="flex items-center gap-2 text-sm text-foreground/60 hover:text-foreground/80 transition-colors"
-          >
-            {showPreviews ? "Showing Live Previews" : "Showing Templates"}
-          </button>
         </div>
 
         {/* Example Cards Grid */}
