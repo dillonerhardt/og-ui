@@ -1,15 +1,18 @@
-import { TemplateDefaults } from "@/lib/templates";
-
-interface Props extends TemplateDefaults {}
-
 export function ProfileOG({
-  title = "Your Name",
-  subtitle = "Your Title / Role",
-  description = "A brief description about yourself and what you do. Keep it concise and impactful.",
-  imageUrl = "https://your-profile-image.jpg",
+  title,
+  subtitle,
+  description,
+  imageUrl,
   backgroundColor = "#18181B",
-  website = "yourwebsite.com",
-}: Props) {
+  website,
+}: {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  imageUrl?: string;
+  backgroundColor?: string;
+  website?: string;
+}) {
   return (
     <div
       style={{
@@ -33,6 +36,8 @@ export function ProfileOG({
         <img
           src={imageUrl}
           alt="Profile"
+          width={300}
+          height={300}
           style={{
             width: "300px",
             height: "300px",

@@ -628,7 +628,7 @@ export async function GET() {
       subtitle: "Avenger",
       imageUrl: "https://og-ui.erh.im/images/luigi.jpg",
       backgroundColor: "#18181B",
-      website: "og-ui.erh.im",
+      // website: "og-ui.erh.im",
       description: "Building cool stuff on the internet",
     },
     code: `import { ImageResponse } from 'next/og'
