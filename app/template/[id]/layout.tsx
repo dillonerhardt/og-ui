@@ -27,10 +27,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: template.description,
     openGraph: {
       title: template.title,
-      description: template.description,
+      description: `${template.description}. Ready-to-use OG image templates you can copy, paste, and customize for your projects.`,
       images: [
         {
-          url: template.image,
+          url: `/templates/${template.id}.png`,
           width: 1200,
           height: 630,
           alt: template.title,

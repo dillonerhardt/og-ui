@@ -15,7 +15,10 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "OG (Img) UI",
+  title: {
+    template: "%s | OG UI",
+    default: "OG (Img) UI",
+  },
   description:
     "It's like Shadcn/UI, but for the Next.js OG Image Generation API. Ready-to-use templates you can copy, paste, and customize for your projects.",
 };
