@@ -24,7 +24,7 @@ export async function CodeBlock({ code, language = "tsx" }: CodeBlockProps) {
   return (
     <div className="relative">
       <div
-        className="text-sm p-4 rounded-lg bg-[#111111] border border-white/5 overflow-x-auto"
+        className="text-sm p-4 rounded-lg bg-[#111111] border border-white/5 overflow-x-auto overflow-y-auto"
         dangerouslySetInnerHTML={{ __html: processedCode.toString() }}
       />
     </div>

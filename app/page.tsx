@@ -95,10 +95,11 @@ export default function Home() {
                     className="object-cover w-full h-full"
                   />
                 ) : (
-                  <img
+                  <Image
                     src={`/templates/${card.id}.png`}
                     alt={card.title}
-                    className="object-cover w-full h-full"
+                    fill
+                    className="object-cover"
                   />
                 )}
               </div>

@@ -9,7 +9,7 @@ export default async function CodePage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const id = (await params).id as string;
+  const { id } = await params;
   const template = TEMPLATES.find((t) => t.id === id)!;
 
   const compiledTemplate = template.id

@@ -5,9 +5,11 @@ import { TEMPLATES, DISABLE_PREVIEW_EDIT } from "@/lib/templates";
 import { DownloadButton } from "./download-button";
 import { EditForm } from "./edit-form";
 import { useState } from "react";
+import { useParams } from "next/navigation";
 
-export default function PreviewPage({ params }: { params: { id: string } }) {
-  const template = TEMPLATES.find((t) => t.id === params.id)!;
+export default function PreviewPage() {
+  const { id } = useParams();
+  const template = TEMPLATES.find((t) => t.id === id)!;
   const [customProps, setCustomProps] = useState<Record<string, string>>({});
 
   const previewUrl = `/api/og?template=${template.id}${
@@ -34,7 +36,7 @@ export default function PreviewPage({ params }: { params: { id: string } }) {
         <img
           src={previewUrl}
           alt="Preview"
-          className="w-full aspect-[1200/630] rounded-lg border border-white/5 bg-background"
+          className="w-full aspect-[1200/630] rounded-lg border border-black/5 dark:border-white/5 bg-background"
         />
       </div>
     </div>

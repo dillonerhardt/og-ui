@@ -5,6 +5,7 @@ export default function EventOg({
   location,
   logoImage,
   textColor = "#ffffff",
+  backgroundColor = "#000000",
 }: {
   title?: string;
   subtitle?: string;
@@ -13,6 +14,7 @@ export default function EventOg({
   location?: string;
   logoImage?: string;
   textColor?: string;
+  backgroundColor?: string;
 }) {
   return (
     <div
@@ -21,9 +23,8 @@ export default function EventOg({
         flexDirection: "column",
         width: "100%",
         height: "100%",
-        backgroundColor: "#000000",
+        backgroundColor: backgroundColor,
         color: textColor,
-        // padding: "32px",
         position: "relative",
       }}
     >
@@ -93,9 +94,9 @@ export default function EventOg({
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "flex-end",
+            flexDirection: "row",
+            alignItems: "flex-end",
+            justifyContent: "center",
             flex: 1,
             gap: "16px",
           }}

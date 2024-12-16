@@ -102,7 +102,7 @@ export default async function TemplateLayout({ children, params }: Props) {
           </div>
 
           {/* Right Section - Route Content */}
-          <div className="sticky top-8">
+          <div className="top-8">
             <Tabs />
             <div>{children}</div>
           </div>

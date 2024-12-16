@@ -156,6 +156,7 @@ export async function GET(request: Request) {
             location={location}
             logoImage={logoImage}
             textColor={textColor}
+            backgroundColor={backgroundColor}
           />
         );
         break;
