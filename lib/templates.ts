@@ -269,7 +269,7 @@ export const TEMPLATES: Template[] = [
     inspiredByUrl: "https://vercel.com",
     defaults: {
       title: "OG Disrupt",
-      backgroundImage: "https://og-ui.erh.im/images/og-ui-line.svg",
+      backgroundImage: "https://og-ui.erh.im/images/ui-og-event-bg.png",
       date: "MAY 23, 2024",
       location: "NEW YORK CITY",
       logoImage: "https://og-ui.erh.im/og-ui.svg",

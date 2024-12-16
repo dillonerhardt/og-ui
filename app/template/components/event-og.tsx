@@ -26,28 +26,12 @@ export default function EventOg({
         backgroundColor: backgroundColor,
         color: textColor,
         position: "relative",
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Background Image */}
-      {backgroundImage && (
-        <img
-          src={backgroundImage}
-          alt="Background"
-          //   height={1000}
-          //   width={1000}
-          style={{
-            position: "absolute",
-            // top: 0,
-            // left: 0,
-            // width: "100%",
-            // height: "100%",
-            objectFit: "contain",
-            objectPosition: "center",
-            // zIndex: 0,
-          }}
-        />
-      )}
-
       {/* Content Container */}
       <div
         style={{
@@ -57,6 +41,7 @@ export default function EventOg({
           zIndex: 1,
           height: "100%",
           padding: "32px",
+          backgroundColor: "transparent",
         }}
       >
         {/* Top Bar */}
@@ -100,12 +85,13 @@ export default function EventOg({
             alignItems: "flex-end",
             justifyContent: "center",
             flex: 1,
-            gap: "16px",
+            gap: "20px",
+            marginBottom: "16px",
           }}
         >
           <h1
             style={{
-              fontSize: "64px",
+              fontSize: "56px",
               fontWeight: "400",
               fontFamily: "Geist",
               WebkitBackgroundClip: "text",
@@ -116,6 +102,20 @@ export default function EventOg({
           >
             {title}
           </h1>
+          <div
+            style={{
+              fontSize: "24px",
+              fontWeight: "400",
+              fontFamily: "Geist",
+              border: "1px solid",
+              borderColor: textColor,
+              padding: "6px",
+              borderRadius: "8px",
+              marginBottom: "2px",
+            }}
+          >
+            24
+          </div>
         </div>
       </div>
     </div>
