@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { TEMPLATES } from "@/lib/templates";
 
-const showPreviews = true;
+const showPreviews = false;
 
 export default function Home() {
   return (
@@ -96,7 +96,7 @@ export default function Home() {
                   />
                 ) : (
                   <img
-                    src={card.image}
+                    src={`/templates/${card.id}.png`}
                     alt={card.title}
                     className="object-cover w-full h-full"
                   />

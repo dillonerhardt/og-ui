@@ -71,7 +71,7 @@ export default async function TemplateLayout({ children, params }: Props) {
           <div className="flex flex-col gap-4">
             <div className="aspect-[1200/630] relative rounded-xl overflow-hidden border border-black/5 dark:border-white/5">
               <Image
-                src={template.image}
+                src={`/templates/${template.id}.png`}
                 alt={template.title}
                 fill
                 className="object-cover"
