@@ -1,7 +1,8 @@
 import { GeistMono } from "geist/font/mono";
-import { Clipboard } from "lucide-react";
 import { CodeBlock } from "@/components/ui/code-block";
 import { TEMPLATES } from "@/lib/templates";
+import { COMPILED_TEMPLATES } from "@/lib/compiled-templates";
+import { CopyButton } from "./copy-button";
 
 export default async function CodePage({
   params,
@@ -11,15 +12,20 @@ export default async function CodePage({
   const id = (await params).id as string;
   const template = TEMPLATES.find((t) => t.id === id)!;
 
+  const compiledTemplate = template.id
+    ? (COMPILED_TEMPLATES as any)[template.id]
+    : null;
+  const displayCode = compiledTemplate
+    ? compiledTemplate.original
+    : template.code;
+
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
         <h2 className={"text-lg font-medium " + GeistMono.className}>Code</h2>
-        <button className="py-2 flex items-center gap-2 rounded-md text-sm hover:text-foreground/80 transition-colors">
-          <Clipboard className="w-5 h-5" /> Copy
-        </button>
+        <CopyButton code={displayCode || ""} />
       </div>
-      <CodeBlock code={template.code || ""} />
+      <CodeBlock code={displayCode || ""} language="tsx" />
     </div>
   );
 }
