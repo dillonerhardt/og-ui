@@ -1,3 +1,5 @@
+export const DISABLE_PREVIEW_EDIT = true;
+
 export interface TemplateDefaults {
   title?: string;
   subtitle?: string;
@@ -7,9 +9,32 @@ export interface TemplateDefaults {
   backgroundImage?: string;
   author?: string;
   website?: string;
+  logoImage?: string;
+  textColor?: string;
+  date?: string;
+  location?: string;
+  appImage?: string;
 }
 
-export const TEMPLATES = [
+export interface PropMetadata {
+  description: string;
+  type: "text" | "color" | "url";
+  placeholder: string;
+}
+
+export interface Template {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  inspiredBy?: string;
+  inspiredByUrl?: string;
+  defaults?: TemplateDefaults;
+  defaultsMetadata?: Record<string, PropMetadata>;
+  code?: string;
+}
+
+export const TEMPLATES: Template[] = [
   {
     id: "classic-og",
     title: "Classic OG",
@@ -18,10 +43,32 @@ export const TEMPLATES = [
     inspiredBy: "Axiom",
     inspiredByUrl: "https://axiom.co",
     defaults: {
-      title: "Generate dynamic  OpenGraph images.",
+      title: "Generate dynamic OpenGraph images.",
       subtitle: "https://og-ui.erh.im →",
       backgroundImage: "https://og-ui.erh.im/images/blue-right-hex.png",
       logoImage: "https://og-ui.erh.im/og-ui.svg",
+    },
+    defaultsMetadata: {
+      title: {
+        description: "Main heading displayed on the image",
+        type: "text",
+        placeholder: "Your Awesome Title",
+      },
+      subtitle: {
+        description: "Secondary text shown below the title",
+        type: "text",
+        placeholder: "https://your-site.com",
+      },
+      backgroundImage: {
+        description: "URL of the background pattern/image",
+        type: "url",
+        placeholder: "https://example.com/background.png",
+      },
+      logoImage: {
+        description: "URL of your logo image",
+        type: "url",
+        placeholder: "https://example.com/logo.svg",
+      },
     },
     code: `import { ImageResponse } from 'next/og'
  
@@ -74,6 +121,23 @@ export async function GET() {
       title: "Embrace OpenGraph.",
       backgroundImage: "https://og-ui.erh.im/images/honeycomb-bg.png",
       logoImage: "https://og-ui.erh.im/og-ui.svg",
+    },
+    defaultsMetadata: {
+      title: {
+        description: "Main heading displayed on the image",
+        type: "text",
+        placeholder: "Your Title Here",
+      },
+      backgroundImage: {
+        description: "URL of the background pattern/image",
+        type: "url",
+        placeholder: "https://your-background-image.jpg",
+      },
+      logoImage: {
+        description: "Event/brand logo URL",
+        type: "url",
+        placeholder: "https://example.com/logo.svg",
+      },
     },
     code: `import { ImageResponse } from 'next/og'
  
@@ -150,6 +214,18 @@ export async function GET() {
       title: "Geist Mono",
       backgroundColor: "#000000",
     },
+    defaultsMetadata: {
+      title: {
+        description: "Main heading displayed on the image",
+        type: "text",
+        placeholder: "Your Title Here",
+      },
+      backgroundColor: {
+        description: "Background color of the image",
+        type: "color",
+        placeholder: "#000000",
+      },
+    },
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -210,6 +286,23 @@ export async function GET() {
       title: "OpenGraph",
       backgroundColor: "#41B1FD",
       textColor: "#000000",
+    },
+    defaultsMetadata: {
+      title: {
+        description: "Main heading displayed on the image",
+        type: "text",
+        placeholder: "Your Title Here",
+      },
+      backgroundColor: {
+        description: "Background color of the image",
+        type: "color",
+        placeholder: "#41B1FD",
+      },
+      textColor: {
+        description: "Color of the text",
+        type: "color",
+        placeholder: "#000000",
+      },
     },
     code: `import { ImageResponse } from 'next/og'
  
@@ -284,6 +377,23 @@ export async function GET() {
       backgroundImage: "https://og-ui.erh.im/images/green-hex.png",
       appImage: "https://og-ui.erh.im/images/iphone-mockup.png",
     },
+    defaultsMetadata: {
+      title: {
+        description: "Main heading displayed on the image",
+        type: "text",
+        placeholder: "Your Title Here",
+      },
+      backgroundImage: {
+        description: "URL of the background pattern/image",
+        type: "url",
+        placeholder: "https://og-ui.erh.im/images/green-hex.png",
+      },
+      appImage: {
+        description: "URL of the app image",
+        type: "url",
+        placeholder: "https://og-ui.erh.im/images/iphone-mockup.png",
+      },
+    },
     code: `import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
@@ -348,6 +458,19 @@ export async function GET() {
       imageUrl:
         "https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg",
       backgroundColor: "#dc0100",
+    },
+    defaultsMetadata: {
+      imageUrl: {
+        description: "URL of the logo image",
+        type: "url",
+        placeholder:
+          "https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg",
+      },
+      backgroundColor: {
+        description: "Background color of the image",
+        type: "color",
+        placeholder: "#dc0100",
+      },
     },
     code: `import { ImageResponse } from 'next/og'
  
@@ -419,6 +542,33 @@ export async function GET() {
       imageUrl: "https://og-ui.erh.im/images/og-code-product.png",
       backgroundColor: "#121212",
       logoImage: "https://og-ui.erh.im/og-ui.svg",
+    },
+    defaultsMetadata: {
+      title: {
+        description: "Main heading displayed on the image",
+        type: "text",
+        placeholder: "OG Templates",
+      },
+      description: {
+        description: "Short product description",
+        type: "text",
+        placeholder: "Describe your product",
+      },
+      imageUrl: {
+        description: "URL of the product image",
+        type: "url",
+        placeholder: "https://og-ui.erh.im/images/og-code-product.png",
+      },
+      backgroundColor: {
+        description: "Background color of the image",
+        type: "color",
+        placeholder: "#121212",
+      },
+      logoImage: {
+        description: "URL of your brand logo",
+        type: "url",
+        placeholder: "https://og-ui.erh.im/og-ui.svg",
+      },
     },
     code: `import { ImageResponse } from 'next/og'
  
@@ -506,6 +656,38 @@ export async function GET() {
       location: "NEW YORK CITY",
       logoImage: "https://og-ui.erh.im/og-ui-dark.svg",
       textColor: "#000000",
+    },
+    defaultsMetadata: {
+      title: {
+        description: "Main heading displayed on the image",
+        type: "text",
+        placeholder: "OG Disrupt",
+      },
+      backgroundImage: {
+        description: "URL of the background pattern/image",
+        type: "url",
+        placeholder: "https://og-ui.erh.im/images/og-man-graphic.jpg",
+      },
+      date: {
+        description: "Event date",
+        type: "text",
+        placeholder: "MAY 23, 2024",
+      },
+      location: {
+        description: "Event location",
+        type: "text",
+        placeholder: "NEW YORK CITY",
+      },
+      logoImage: {
+        description: "Event/brand logo URL",
+        type: "url",
+        placeholder: "https://og-ui.erh.im/og-ui-dark.svg",
+      },
+      textColor: {
+        description: "Color of the text",
+        type: "color",
+        placeholder: "#000000",
+      },
     },
     code: `import { ImageResponse } from 'next/og'
  
@@ -601,6 +783,18 @@ export async function GET() {
       title: "OpenGraph is stuck in the 90s.",
       backgroundImage: "https://og-ui.erh.im/images/theo.jpeg",
     },
+    defaultsMetadata: {
+      title: {
+        description: "Main heading displayed on the image",
+        type: "text",
+        placeholder: "OpenGraph is stuck in the 90s.",
+      },
+      backgroundImage: {
+        description: "URL of the background pattern/image",
+        type: "url",
+        placeholder: "https://og-ui.erh.im/images/theo.jpeg",
+      },
+    },
   },
   {
     id: "blog-og",
@@ -614,6 +808,28 @@ export async function GET() {
       subtitle: "February 4, 2016 — 21,839 views",
       author: "Dillon",
       website: "og-ui.erh.im",
+    },
+    defaultsMetadata: {
+      title: {
+        description: "Main heading displayed on the image",
+        type: "text",
+        placeholder: "Dynamic OG Images",
+      },
+      subtitle: {
+        description: "Publication date and stats",
+        type: "text",
+        placeholder: "February 4, 2016 — 21,839 views",
+      },
+      author: {
+        description: "Author name",
+        type: "text",
+        placeholder: "Dillon",
+      },
+      website: {
+        description: "Blog website",
+        type: "text",
+        placeholder: "og-ui.erh.im",
+      },
     },
   },
   {
@@ -630,6 +846,38 @@ export async function GET() {
       backgroundColor: "#18181B",
       website: "Profile",
       description: "Passionate about healthcare and accountability",
+    },
+    defaultsMetadata: {
+      title: {
+        description: "Main heading displayed on the image",
+        type: "text",
+        placeholder: "Luigi Mangione",
+      },
+      subtitle: {
+        description: "Job title or role",
+        type: "text",
+        placeholder: "Avenger",
+      },
+      imageUrl: {
+        description: "Profile photo URL",
+        type: "url",
+        placeholder: "https://og-ui.erh.im/images/luigi.jpg",
+      },
+      backgroundColor: {
+        description: "Background color",
+        type: "color",
+        placeholder: "#18181B",
+      },
+      website: {
+        description: "Website or username",
+        type: "text",
+        placeholder: "Profile",
+      },
+      description: {
+        description: "Brief bio or description",
+        type: "text",
+        placeholder: "Passionate about healthcare and accountability",
+      },
     },
     code: `import { ImageResponse } from 'next/og'
  
